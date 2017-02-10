@@ -14,12 +14,16 @@
 </head>
 
 <body>
-  <div id="circle"></div>
+  <p></p>
 
   <script type="text/javascript">
 
-    $.get("info.txt", function(data) {
-      alert(data);
+    $.ajax("info.txt")
+      .done(function(data) {
+        $("p").html(data);
+      })
+      .fail(function() {
+        alert("Error fetching data");
     });
 
   </script>
