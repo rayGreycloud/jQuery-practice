@@ -13,6 +13,12 @@
         margin: 10px;
       }
 
+      .square {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        margin: 10px;
+      }
     </style>
   </head>
 
@@ -20,17 +26,34 @@
 
     <div id="circle"></div>
 
+    <div class="square" id="square1"></div>
+
+    <div class="square" id="square2"></div>
+
     <script type="text/javascript">
-      // Select element by id and set click handler
-      $("#circle").click(function() {
-        // Changing css examples
-        $("#circle").css("width", "400px");
-        $("#circle").css("background-color", "red");
-        // Grabbing css value
-        const color = $("#circle").css("background-color");
-        const width = $("body").css("width");
-        alert(color);
-        alert(width);
+      // First version
+      // $("#circle").click(() => {
+      //   $("#circle").css("visibility", "hidden");
+      // });
+      //
+      // $("#square1").click(() => {
+      //   $("#square1").css("visibility", "hidden");
+      // });
+      //
+      // $("#square2").click(() => {
+      //   $("#square2").css("visibility", "hidden");
+      // });
+
+      // Refactor into single function
+      // Using 'this' requires function keyword because of scope
+      $("div").click(function() {
+        $(this).css("display", "none");
+
+        if ($(this).attr("id") === "circle") {
+          alert("You clicked the circle");
+        } else {
+          alert("You clicked a square");
+        }
 
       });
 
