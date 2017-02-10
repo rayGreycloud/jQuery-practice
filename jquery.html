@@ -4,34 +4,30 @@
     <script src="jquery.min.js"></script>
 
     <style type="text/css">
-      #text {
-        width: 400px;
-      }
-
-      .hidden {
-        display: none;
+      #circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: green;
+        margin: 10px;
       }
 
     </style>
+
   </head>
 
   <body>
 
-    <p id="text">The display property of this paragraph can be toggled by clicking the button below.</p>
-
-    <button id="toggle">Toggle Text Fade</button>
+    <div id="circle"></div>
 
     <script type="text/javascript">
-      // Version 1
-      // $("#toggle").click(() => $("#text").toggleClass("hidden"));
-
-      // Version 2 - fade effect
-      $("#toggle").click(() => {
-        if ($("#text").css("display") === "none") {
-          $("#text").fadeIn();
-        } else {
-          $("#text").fadeOut();
-        }
+      $("#circle").click(function() {
+        $(this).animate({
+          width:"400px",
+          height:"400px",
+          marginLeft:"100px",
+          marginTop:"100px"
+        }, 2000);
       });
 
     </script>
