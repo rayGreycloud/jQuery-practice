@@ -4,7 +4,11 @@
     <script src="jquery.min.js"></script>
 
     <style type="text/css">
-      #p2 {
+      #text {
+        width: 400px;
+      }
+
+      .hidden {
         display: none;
       }
 
@@ -13,25 +17,21 @@
 
   <body>
 
-    <p id="p1">This paragraph is visible but can be hidden by clicking the button below. There is another paragraph below this one, which is currently hidden but can be revealed by clicking the second button below.</p>
-    <button id="fadeOut">fadeOut text</button>
+    <p id="text">The display property of this paragraph can be toggled by clicking the button below.</p>
 
-    <p id="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed semper tortor. Nam nec nunc vel neque tincidunt varius.</p>
-
-    <button id="fadeIn">fadeIn text</button>
+    <button id="toggle">Toggle Text Fade</button>
 
     <script type="text/javascript">
+      // Version 1
+      // $("#toggle").click(() => $("#text").toggleClass("hidden"));
 
-      $("#fadeOut").click(function() {
-
-        $("#p1").fadeOut("slow");
-
-      });
-
-      $("#fadeIn").click(function() {
-
-        $("#p2").fadeIn("slow");
-
+      // Version 2 - fade effect
+      $("#toggle").click(() => {
+        if ($("#text").css("display") === "none") {
+          $("#text").fadeIn();
+        } else {
+          $("#text").fadeOut();
+        }
       });
 
     </script>
