@@ -4,27 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>jQuery</title>
+  <title>AJAX</title>
   <script src="jquery.min.js"></script>
 
   <style type="text/css">
-    #circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background-color: green;
-      margin: 10px;
-    }
+
 
   </style>
 </head>
+
 <body>
   <div id="circle"></div>
 
   <script type="text/javascript">
 
-
+    $.get("info.txt", function(data) {
+      alert(data);
+    });
 
   </script>
+
 </body>
 </html>
