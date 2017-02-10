@@ -16,25 +16,25 @@
     </style>
   </head>
 
-    <body>
+  <body>
 
     <div id="circle"></div>
 
-    <p>This is some text.</p>
-
-    <iframe src="http://www.cnn.com"></iframe>
-
     <script type="text/javascript">
-
+      // Select element by id and set click handler
       $("#circle").click(function() {
-        $("p").html("This text has changed!");
-        alert($("p").html());
+        // Changing css examples
+        $("#circle").css("width", "400px");
+        $("#circle").css("background-color", "red");
+        // Grabbing css value
+        const color = $("#circle").css("background-color");
+        const width = $("body").css("width");
+        alert(color);
+        alert(width);
+
       });
 
-      $("iframe").hover(function() {
-        $("iframe").attr("src", "http://www.katu.com");
-      });
 
     </script>
-    </body>
+  </body>
 </html>
