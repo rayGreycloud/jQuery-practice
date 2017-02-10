@@ -4,42 +4,35 @@
     <script src="jquery.min.js"></script>
 
     <style type="text/css">
-
-      #circle {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color: green;
-        margin: 10px;
+      #p2 {
+        display: none;
       }
 
-      .square {
-        width: 150px;
-        height: 150px;
-        background-color: red;
-        margin: 10px;
-      }
     </style>
   </head>
 
   <body>
 
-    <div id="circle"></div>
+    <p id="p1">This paragraph is visible but can be hidden by clicking the button below. There is another paragraph below this one, which is currently hidden but can be revealed by clicking the second button below.</p>
+    <button id="fadeOut">fadeOut text</button>
 
-    <div class="square"></div>
+    <p id="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed semper tortor. Nam nec nunc vel neque tincidunt varius.</p>
 
-    <div class="square"></div>
+    <button id="fadeIn">fadeIn text</button>
 
     <script type="text/javascript">
 
-      $("div").click(function() {
+      $("#fadeOut").click(function() {
 
-        $(this).fadeOut("slow", function() {
-          alert("FadeOut has finished.");
-        });
+        $("#p1").fadeOut("slow");
 
       });
 
+      $("#fadeIn").click(function() {
+
+        $("#p2").fadeIn("slow");
+
+      });
 
     </script>
   </body>
