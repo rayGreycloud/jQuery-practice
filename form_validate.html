@@ -49,6 +49,9 @@
 <body>
 
   <div id="wrapper">
+
+    <div id="errorMessage"></div>
+
     <div class="form-element">
       <label for="email">Email</label>
       <input type="text" name="email" id="email" placeholder="YourEmail@email.com">
@@ -65,7 +68,7 @@
     </div>
 
     <div class="form-element">
-      <label for="passwordConfirm">Confirm Password</label>
+      <label for="passwordConfirm">Re-type Password</label>
       <input type="password" name="passwordConfirm" id="passwordConfirm">
     </div>
 
@@ -85,11 +88,48 @@
 
     $("#submitButton").click(function() {
       var errorMessage = "";
+      var fieldsMissing = "";
+
+      // Check that each field is filled in
+      if ($("#email").val() == "") {
+        fieldsMissing += "<br>-Email";
+      }
+
+      if ($("#phone").val() == "") {
+        fieldsMissing += "<br>-Phone";
+      }
+
+      if ($("#password").val() == "") {
+        fieldsMissing += "<br>-Password";
+      }
+
+      if ($("#passwordConfirm").val() == "") {
+        fieldsMissing += "<br>-Confirm Password";
+      }
+
+      // Add missing fields error message
+      if (fieldsMissing != "") {
+        errorMessage += `<p>&#x26a0; The following field(s) are missing: ${fieldsMissing}`;
+      }
+
+      // Validate email address using regex function
       if (isEmail($("#email").val()) == false) {
         errorMessage += "<p>Invalid email address</p>";
       }
 
-      alert(errorMessage);
+      // Check if phone number is numeric
+      if ($.isNumeric($("#phone").val()) == false) {
+        errorMessage += "<p>Invalid phone number</p>"
+      }
+
+      // Check if passwords match
+      if ($("#password").val() != $("#passwordConfirm").val()) {
+        errorMessage += "<p>Passwords do not match</p>"
+      }
+
+      if (errorMessage != "") {
+        $("#errorMessage").html(errorMessage);
+      }
     });
 
   </script>
