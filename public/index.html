@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>jQuery</title>
+  <title>AJAX</title>
   <script src="jquery.min.js"></script>
 
   <style type="text/css">
@@ -14,19 +14,17 @@
 </head>
 
 <body>
-
+  <p></p>
 
   <script type="text/javascript">
-    // regex flags
-    // /abc/i - ignore case
-    // /abc/g - global - return all instances
-    var regex = /is/;
 
-    var string = "Regex is great.";
-
-    var result = string.match(regex);
-
-    alert(result);
+    $.ajax("info.txt")
+      .done(function(data) {
+        $("p").html(data);
+      })
+      .fail(function() {
+        alert("Error fetching data");
+    });
 
   </script>
 
