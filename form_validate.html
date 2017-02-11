@@ -42,6 +42,18 @@
       margin-left: 200px;
     }
 
+    #errorMessage {
+      color: red;
+      font-size: 90% !important;
+    }
+
+    #successMessage {
+      color: green;
+      font-size: 90% !important;
+      display: none;
+      margin-bottom: 20px;
+    }
+
   </style>
 
 </head>
@@ -49,6 +61,8 @@
 <body>
 
   <div id="wrapper">
+
+    <div id="successMessage">Success! You're signed up.</div>
 
     <div id="errorMessage"></div>
 
@@ -114,22 +128,27 @@
 
       // Validate email address using regex function
       if (isEmail($("#email").val()) == false) {
-        errorMessage += "<p>Invalid email address</p>";
+        errorMessage += "<p>&#x26a0; Invalid email address</p>";
       }
 
       // Check if phone number is numeric
       if ($.isNumeric($("#phone").val()) == false) {
-        errorMessage += "<p>Invalid phone number</p>"
+        errorMessage += "<p>&#x26a0; Invalid phone number</p>"
       }
 
       // Check if passwords match
       if ($("#password").val() != $("#passwordConfirm").val()) {
-        errorMessage += "<p>Passwords do not match</p>"
+        errorMessage += "<p>&#x26a0; Passwords do not match</p>"
       }
 
       if (errorMessage != "") {
         $("#errorMessage").html(errorMessage);
+      } else {
+        $("#successMessage").show();
+        $("#errorMessage").hide();
       }
+
+
     });
 
   </script>
