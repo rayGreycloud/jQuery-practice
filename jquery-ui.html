@@ -38,7 +38,13 @@
     // Synchronous resize
     $("#resizable").resizable({
       grid: 50,
-      alsoResize: "#also"
+      alsoResize: "#also",
+      resize: function(event, ui) {
+
+        if ($("#resizable").width() > 300) {
+          alert("Big enough!");
+        }
+      }
     });
 
     $("#also").resizable();
