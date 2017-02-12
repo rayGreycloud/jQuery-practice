@@ -17,17 +17,31 @@
       background-color: LightBlue;
     }
 
+    #also {
+      width: 100px;
+      height: 100px;
+      padding: 0.5em;
+      background-color: Silver;
+    }
+
   </style>
 
 </head>
 
 <body>
 
-    <div id="resizable" class="ui-widget-content"></div>
+    <div id="resizable"></div>
+
+    <div id="also"></div>
 
   <script type="text/javascript">
-      // Snap to grid
-      $("#resizable").resizable({ grid: 50 });
+    // Synchronous resize
+    $("#resizable").resizable({
+      grid: 50,
+      alsoResize: "#also"
+    });
+
+    $("#also").resizable();
 
   </script>
 
