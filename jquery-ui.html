@@ -13,6 +13,7 @@
       width: 150px;
       height: 150px;
       padding: 0.5em;
+      background-color: green;
     }
   </style>
 
@@ -25,13 +26,11 @@
     <div id="draggable" class="ui-widget-content">
       <p>Drag me around</p>
     </div>
-    
+
   </div>
 
   <script type="text/javascript">
-    $( function() {
-      $( "#draggable" ).draggable();
-    } );
+    $(() => $("#draggable").draggable());
   </script>
 
 </body>
