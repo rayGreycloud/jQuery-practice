@@ -9,10 +9,10 @@
   <link type="stylesheet"href="vendor/jquery-ui/jquery-ui.css">
 
   <style>
-    #draggable {
-      width: 150px;
-      height: 150px;
-      padding: 0.5em;
+
+    #container {
+      width: 400px;
+      height: 300px;
       background-color: green;
     }
 
@@ -22,16 +22,19 @@
 
 <body>
 
-  <div id="wrapper">
+    <div id="draggable" class="ui-widget-content">Drag me horizontally</div>
 
-    <div id="draggable" class="ui-widget-content">
-      <p>Drag me around</p>
+    <div id="container">
+      <span id="draggable2">Stuck in the box.</span>
     </div>
 
   </div>
 
   <script type="text/javascript">
-    $(() => $("#draggable").draggable({ axis: "y" }));
+    $(function() {
+      $("#draggable").draggable({ axis: "x" });
+      $("span").draggable({ containment: "parent" });
+    });
   </script>
 
 </body>
