@@ -13,14 +13,50 @@
   <link rel="stylesheet"href="vendor/jquery-ui/jquery-ui.css">
 
   <style type="text/css">
+    body {
+      font-family: sans-serif;
+      padding: 0;
+      margin: 0;
 
+    }
+
+    #header {
+      width: 100%;
+      height: 20px;
+      background-color: #EEEEEE;
+      padding: 5px;
+    }
+
+    #logo {
+      float: left;
+    }
+
+    #buttonContainer {
+      width: 200px;
+      margin: 0 auto;
+
+    }
+
+    .toggleButton {
+      float: left;
+    }
 
   </style>
 </head>
 
 <body>
-  <p>CodeBin</p>
+  <div id="header">
 
+    <div id="logo">CodeBin</div>
+
+    <div id="buttonContainer">
+      <div class="toggleButton" id="html">HTML</div>
+      <div class="toggleButton" id="css">CSS</div>
+      <div class="toggleButton" id="javascript">JavaScript</div>
+      <div class="toggleButton" id="output">Output</div>
+
+    </div>
+  </div>
   <script type="text/javascript">
 
 
