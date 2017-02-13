@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 
-  <title>Droppable</title>
+  <title>Accordion</title>
 
   <script type="text/javascript" src="vendor/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
@@ -10,37 +10,34 @@
 
   <style type="text/css">
 
-    #droppable {
-      width: 300px;
-      height: 300px;
-      background-color: LightBlue;
-    }
-
-    #draggable {
-      width: 100px;
-      height: 100px;
-      background-color: Silver;
-    }
-
   </style>
 
 </head>
 
 <body>
-
-    <div id="draggable">Drag Me!</div>
-
-    <div id="droppable"></div>
+  <div id="accordion">
+    <h3>Section 1</h3>
+    <div>
+      <p>Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh.</p>
+    </div>
+    <h3>Section 2</h3>
+    <div>
+      <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    </div>
+    <h3>Section 3</h3>
+    <div>
+      <p>Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+      </p>
+    </div>
+    <h3>Section 4</h3>
+    <div>
+      <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.</p>
+    </div>
+  </div>
 
   <script type="text/javascript">
 
-    $("#draggable").draggable();
-
-    $("#droppable").droppable({
-      drop: function(event, ui) {
-        alert("Dropped!");
-      }
-    });
+    $(() => $("#accordion").accordion());
 
   </script>
 
