@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 
-  <title>Accordion</title>
+  <title>Sortable</title>
 
   <script type="text/javascript" src="vendor/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
@@ -9,35 +9,51 @@
   <link rel="stylesheet"href="vendor/jquery-ui/jquery-ui.css">
 
   <style type="text/css">
+    #sortable {
+      list-style-type: none; margin: 0; padding: 0;
+      width: 60%;
+    }
 
+    #sortable li {
+      margin: 0 3px 3px 3px; padding: 0.4em;
+      padding-left: 1.5em; font-size: 1.4em;
+      height: 18px;
+    }
+
+    #sortable li span {
+      position: absolute; margin-left: -1.3em;
+    }
   </style>
 
 </head>
 
 <body>
-  <div id="accordion">
-    <h3>Section 1</h3>
-    <div>
-      <p>Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh.</p>
-    </div>
-    <h3>Section 2</h3>
-    <div>
-      <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-    </div>
-    <h3>Section 3</h3>
-    <div>
-      <p>Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-      </p>
-    </div>
-    <h3>Section 4</h3>
-    <div>
-      <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.</p>
-    </div>
-  </div>
+  <ul id="sortable">
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1
+    </li>
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2
+    </li>
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3
+    </li>
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4
+    </li>
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5
+    </li>
+    <li class="ui-state-default">
+      <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6
+    </li>
+  </ul>
 
   <script type="text/javascript">
 
-    $(() => $("#accordion").accordion());
+    $(() => {
+      $("#sortable").sortable();
+    });
 
   </script>
 
