@@ -52,6 +52,16 @@ body {
 }
 
 textarea {
-  width: 50%;
+  resize: none;
+  border-top: none;
+  border-color: rgb(94, 158, 214);
+}
 
+.panel {
+  float: left;
+  width: 50%;
+}
+
+iframe {
+  border: none;
 }
