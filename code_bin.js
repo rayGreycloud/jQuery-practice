@@ -9,6 +9,14 @@ $(".toggleButton").click(function() {
   $(this).toggleClass("active");
 
   $(this).removeClass("highlightedButton");
+
+  var panelId = $(this).attr("id") + "Panel";
+
+  $("#" + panelId).toggleClass("hidden");
+
+  var numberActivePanels = 4 - $(".hidden").length;
+  $(".panel").width(($(window).width() / numberActivePanels) - 10);
+
 })
 
 $(".panel").height($(window).height() - $("#header").height() - 15);
