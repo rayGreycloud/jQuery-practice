@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
   padding: 0;
   margin: 0;
-
 }
 
 #header {
@@ -50,4 +49,9 @@ body {
 
 .highlightedButton {
   background-color: grey;
+}
+
+textarea {
+  width: 50%;
+  height: 100%;
 }

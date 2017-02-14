@@ -10,3 +10,5 @@ $(".toggleButton").click(function() {
 
   $(this).removeClass("highlightedButton");
 })
+
+$("textarea").height($(window).height() - $("header").height() - 15); 
