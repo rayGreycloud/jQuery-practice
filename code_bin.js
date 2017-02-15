@@ -25,7 +25,10 @@ $(".panel").height($(window).height() - $("#header").height() - 15);
 // Set width for initial active fields
 $(".panel").width(($(window).width() / 2) - 10);
 
-// Change output field when other fields change 
+// Change output field when other fields change
 $("textarea").on('change keyup paste', function() {
-  $("iframe").contents().find("html").html($("#htmlPanel").val());
+  var cssCode = $("#cssPanel").val();
+  var htmlCode = $("#htmlPanel").val();
+console.log(cssCode, htmlCode);
+  $("iframe").contents().find("html").html("<html><head><style>" + cssCode + "</style></head><body>" +  htmlCode + "</body></html>");
 });
