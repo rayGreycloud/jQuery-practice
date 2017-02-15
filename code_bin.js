@@ -1,3 +1,11 @@
+// Method to update output field
+function updateOutput() {
+  var cssCode = $("#cssPanel").val();
+  var htmlCode = $("#htmlPanel").val();
+
+  $("iframe").contents().find("html").html("<html><head><style>" + cssCode + "</style></head><body>" +  htmlCode + "</body></html>");
+}
+
 // Change button color on hover
 $(".toggleButton").hover(function() {
   $(this).addClass("highlightedButton");
@@ -25,10 +33,10 @@ $(".panel").height($(window).height() - $("#header").height() - 15);
 // Set width for initial active fields
 $(".panel").width(($(window).width() / 2) - 10);
 
-// Change output field when other fields change
+// Initial update call at start
+updateOutput();
+
+// Update output field when others change
 $("textarea").on('change keyup paste', function() {
-  var cssCode = $("#cssPanel").val();
-  var htmlCode = $("#htmlPanel").val();
-console.log(cssCode, htmlCode);
-  $("iframe").contents().find("html").html("<html><head><style>" + cssCode + "</style></head><body>" +  htmlCode + "</body></html>");
+  updateOutput();
 });
