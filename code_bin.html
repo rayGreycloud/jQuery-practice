@@ -31,11 +31,11 @@
 
   <div id="bodyContainer">
 
-    <textarea id="htmlPanel" class="panel">&lt;p&gt;Hello World!&lt;/&gt;</textarea>
+    <textarea id="htmlPanel" class="panel"><p id="greeting">Hello World!</p></textarea>
 
     <textarea id="cssPanel" class="panel hidden">p { color: green; }</textarea>
 
-    <textarea id="javascriptPanel" class="panel hidden">console.log("Javascript running...");</textarea>
+    <textarea id="javascriptPanel" class="panel hidden">document.getElementById("greeting").innerHTML = "Hola Mundo!";</textarea>
 
     <iframe id="outputPanel" class="panel"></iframe>
   </div>
