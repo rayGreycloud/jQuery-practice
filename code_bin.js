@@ -4,6 +4,9 @@ function updateOutput() {
   var htmlCode = $("#htmlPanel").val();
 
   $("iframe").contents().find("html").html("<html><head><style>" + cssCode + "</style></head><body>" +  htmlCode + "</body></html>");
+
+  // Injecting js into iframe
+  document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
 }
 
 // Change button color on hover
